@@ -3,6 +3,9 @@
 #include <vector>
 using namespace std;
 
+// function to get menu input
+int printMenu();
+
 int main() {
     // declarations
     // store friendship level, species, catchphrase
@@ -53,5 +56,22 @@ int main() {
     villagerLst.clear();
     cout << "Size after clear: " << villagerLst.size() << endl;
 
+    /*Menu-Driven Section*/
+
+    while(true) {
+        int usrInput = printMenu();
+    }
+
     return 0;
+}
+
+// function to get menu input
+int printMenu(){
+    int usrInput;
+    cout << "1. Increase Friendship" << endl;
+    cout << "2. Decrease Friendship" << endl;
+    cout << "3. Search for Villager" << endl;
+    cout << "4. Exit" << endl;
+    cin >> usrInput;
+    return usrInput;
 }
