@@ -1,6 +1,6 @@
 #include <iostream>
 #include <map>
-#include <vector>
+#include <tuple>
 using namespace std;
 
 // function to get menu input
@@ -59,7 +59,26 @@ int main() {
     /*Menu-Driven Section*/
 
     while(true) {
+        // print village
+        for (auto pair : villagerLst) {
+            cout << pair.first << ": ";
+            auto [lvl, species, phrase] = pair.second;
+            cout << "Friendship Level " << lvl << " - Species " << species << " - Catchphrase " << phrase;
+            cout << endl;
+        }
+        // get user input
         int usrInput = printMenu();
+
+        //increase friendship
+        if (usrInput == 1){
+            string name;
+            cout << "Enter villager name: ";
+            cin >> name;
+            int amt;
+            cout << "Enter amount to increase friendship by: ";
+            cin >> amt;
+            get<0>(villagerLst.at(name)) += amt;
+        }
     }
 
     return 0;
