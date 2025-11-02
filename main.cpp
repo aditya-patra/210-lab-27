@@ -1,6 +1,7 @@
 #include <iostream>
 #include <map>
 #include <tuple>
+#include <string>
 using namespace std;
 
 // function to get menu input
@@ -102,7 +103,21 @@ int main() {
                 cout << endl << name << " not found." << endl;
         }
         else if (usrInput == 1) {
-            villagerLst.insert({"Marshal", {1, "Grinch", "Im mad"}});
+            int friendship;
+            string name;
+            string species;
+            string phrase;
+            string temp;
+            cout << "Enter villager name: ";
+            cin >> name;
+            cout << "Enter villager friendship: ";
+            cin >> friendship;
+            cout << "Enter villager species: ";
+            cin >> species;
+            getline(cin, temp);
+            cout << "Enter villager catchphrase: ";
+            getline(cin, phrase);
+            villagerLst.insert({name, {friendship, species, phrase}});
         }
         else{
             cout << "Invalid " << endl;
