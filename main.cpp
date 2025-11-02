@@ -119,6 +119,12 @@ int main() {
             getline(cin, phrase);
             villagerLst.insert({name, {friendship, species, phrase}});
         }
+        else if(usrInput == 2) {
+            string name;
+            cout << "Enter villager name: ";
+            cin >> name;
+            villagerLst.erase(name);
+        }
         else{
             cout << "Invalid " << endl;
         }
