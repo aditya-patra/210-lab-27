@@ -101,6 +101,9 @@ int main() {
             } else
                 cout << endl << name << " not found." << endl;
         }
+        else if (usrInput == 1) {
+            villagerLst.insert({"Marshal", {1, "Grinch", "Im mad"}});
+        }
         else{
             cout << "Invalid " << endl;
         }
