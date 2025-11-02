@@ -19,7 +19,7 @@ int main() {
     for (auto pair : villagerLst) {
         cout << pair.first << ": ";
         auto [lvl, species, phrase] = pair.second;
-        cout << "Friendship Level " << lvl << " - Species " << species << " - Catchphrase" << phrase;
+        cout << "Friendship Level " << lvl << " - Species " << species << " - Catchphrase " << phrase;
         cout << endl;
     }
 
@@ -29,7 +29,7 @@ int main() {
                                                it != villagerLst.end(); ++it) {
         cout << it->first << ": ";
         auto [lvl, species, phrase] = it->second;
-        cout << "Friendship Level " << lvl << " - Species " << species << " - Catchphrase" << phrase;
+        cout << "Friendship Level " << lvl << " - Species " << species << " - Catchphrase " << phrase;
         cout << endl;
     }
 
@@ -42,8 +42,8 @@ int main() {
     if (it != villagerLst.end()) {  // the iterator points to beyond the end of the map
                                        // if searchKey is not found
         cout << "\nFound " << searchKey << "'s favorite colors: ";
-        for (auto color : it->second)  // range loop to traverse the value/vector
-            cout << color << " ";
+        auto [lvl, species, phrase] = it->second;
+        cout << "Friendship Level " << lvl << " - Species " << species << " - Catchphrase " << phrase;
         cout << endl;
     } else
         cout << endl << searchKey << " not found." << endl;
