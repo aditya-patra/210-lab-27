@@ -51,11 +51,6 @@ int main() {
     } else
         cout << endl << searchKey << " not found." << endl;
 
-    // report size, clear, report size again to confirm map operations
-    cout << "\nSize before clear: " << villagerLst.size() << endl;
-    villagerLst.clear();
-    cout << "Size after clear: " << villagerLst.size() << endl;
-
     /*Menu-Driven Section*/
 
     while(true) {
@@ -70,7 +65,10 @@ int main() {
         int usrInput = printMenu();
 
         //increase friendship
-        if (usrInput == 1){
+        if (usrInput == 4) {
+            break;
+        }
+        else if (usrInput == 1){
             string name;
             cout << "Enter villager name: ";
             cin >> name;
@@ -80,6 +78,11 @@ int main() {
             get<0>(villagerLst.at(name)) += amt;
         }
     }
+
+    // report size, clear, report size again to confirm map operations
+    cout << "\nSize before clear: " << villagerLst.size() << endl;
+    villagerLst.clear();
+    cout << "Size after clear: " << villagerLst.size() << endl;
 
     return 0;
 }
