@@ -66,10 +66,10 @@ int main() {
         int usrInput = printMenu();
 
         //increase friendship
-        if (usrInput == 4) {
+        if (usrInput == 6) {
             break;
         }
-        else if (usrInput == 1){
+        else if (usrInput == 3){
             string name;
             cout << "Enter villager name: ";
             cin >> name;
@@ -78,7 +78,7 @@ int main() {
             cin >> amt;
             get<0>(villagerLst.at(name)) += amt;
         }
-        else if (usrInput == 2){
+        else if (usrInput == 4){
             string name;
             cout << "Enter villager name: ";
             cin >> name;
@@ -87,7 +87,7 @@ int main() {
             cin >> amt;
             get<0>(villagerLst.at(name)) -= amt;
         }
-        else if (usrInput == 3) {
+        else if (usrInput == 5) {
             string name;
             cout << "Enter villager name: ";
             cin >> name;
@@ -117,10 +117,12 @@ int main() {
 // function to get menu input
 int printMenu(){
     int usrInput;
-    cout << "1. Increase Friendship" << endl;
-    cout << "2. Decrease Friendship" << endl;
-    cout << "3. Search for Villager" << endl;
-    cout << "4. Exit" << endl;
+    cout << "1. Add Villager" << endl;
+    cout << "2. Delete Villager" << endl;
+    cout << "3. Increase Friendship" << endl;
+    cout << "4. Decrease Friendship" << endl;
+    cout << "5. Search for Villager" << endl;
+    cout << "6. Exit" << endl;
     cin >> usrInput;
     return usrInput;
 }
