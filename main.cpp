@@ -118,6 +118,7 @@ int main() {
             cout << "Enter villager catchphrase: ";
             getline(cin, phrase);
             villagerLst.insert({name, {friendship, species, phrase}});
+            cout << name << " added." << endl;
         }
         else if(usrInput == 2) {
             string name;
