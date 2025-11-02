@@ -77,6 +77,32 @@ int main() {
             cin >> amt;
             get<0>(villagerLst.at(name)) += amt;
         }
+        else if (usrInput == 2){
+            string name;
+            cout << "Enter villager name: ";
+            cin >> name;
+            int amt;
+            cout << "Enter amount to decrease friendship by: ";
+            cin >> amt;
+            get<0>(villagerLst.at(name)) -= amt;
+        }
+        else if (usrInput == 3) {
+            string name;
+            cout << "Enter villager name: ";
+            cin >> name;
+            auto it = villagerLst.find(name);
+            if (it != villagerLst.end()) {  // the iterator points to beyond the end of the map
+                                            // if name is not found
+                cout << "\nFound " << name << "'s favorite colors: ";
+                auto [lvl, species, phrase] = it->second;
+                cout << "Friendship Level " << lvl << " - Species " << species << " - Catchphrase " << phrase;
+                cout << endl;
+            } else
+                cout << endl << name << " not found." << endl;
+        }
+        else{
+            cout << "Invalid " << endl;
+        }
     }
 
     // report size, clear, report size again to confirm map operations
