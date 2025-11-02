@@ -55,10 +55,11 @@ int main() {
 
     while(true) {
         // print village
+        cout << endl << endl;
         for (auto pair : villagerLst) {
-            cout << pair.first << ": ";
+            cout << pair.first << " ";
             auto [lvl, species, phrase] = pair.second;
-            cout << "Friendship Level " << lvl << " - Species " << species << " - Catchphrase " << phrase;
+            cout << "[" << lvl << ", " << species << ", " << phrase << "]";
             cout << endl;
         }
         // get user input
@@ -95,7 +96,7 @@ int main() {
                                             // if name is not found
                 cout << "\nFound " << name << "'s favorite colors: ";
                 auto [lvl, species, phrase] = it->second;
-                cout << "Friendship Level " << lvl << " - Species " << species << " - Catchphrase " << phrase;
+                cout << "[" << lvl << ", " << species << ", " << phrase << "]";
                 cout << endl;
             } else
                 cout << endl << name << " not found." << endl;
