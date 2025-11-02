@@ -5,20 +5,21 @@ using namespace std;
 
 int main() {
     // declarations
+    // store friendship level, species, catchphrase
     map<string, tuple<int, string, string>> villagerColors;
 
     // insert elements into the map
     // note how the right-hand side of the assignment are the vector elements
-    villagerColors["Audie"] = {"Orange", "Yellow", "Red"};
-    villagerColors["Raymond"] = {"Black", "Gray", "White"};
-    villagerColors.insert({"Marshal", {"Blue", "White", "Black"}});
+    villagerColors["Audie"] = {9, "human", "We get it done"};
+    villagerColors["Raymond"] = {10, "goblin", "Yum yum in my tum tum"};
+    villagerColors.insert({"Marshal", {1, "Grinch", "Im mad"}});
 
     // access the map using a range-based for loop
-    cout << "Villagers and their favorite colors (range-based for loop):" << endl;
+    cout << "Villagers and their information (range-based for loop):" << endl;
     for (auto pair : villagerColors) {
         cout << pair.first << ": ";
-        for (auto color : pair.second)
-            cout << color << " ";
+        auto [lvl, species, phrase] = pair.second;
+        cout << "Friendship Level " << lvl << " - Species " << species << " - Catchphrase" << phrase;
         cout << endl;
     }
 
